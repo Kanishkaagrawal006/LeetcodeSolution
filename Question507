@@ -1,0 +1,35 @@
+public class Question507 {
+    public static void main(String[] args) {
+        System.out.println(checkPerfectNumber(7));
+    }
+
+    public static boolean checkPerfectNumber(int num) {
+        int sum = getsum(num);
+        if(sum == num){
+            return true;
+        }
+        return false;
+        }
+
+    static int getsum(int num){
+        ArrayList<Integer> PerfectNumber = getPerfectNumber(num);
+        int sum = 0;
+        for(int i = 0; i < PerfectNumber.size(); i++){
+            sum =sum + PerfectNumber.get(i);
+
+        }
+        return sum ;
+    }
+    static ArrayList<Integer> getPerfectNumber(int num) {
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        for (int i = 1; i < num; i++) {
+            if (num % i == 0) {
+                list.add(i);
+            }
+
+        }
+        return list;
+    }
+
+}
+
